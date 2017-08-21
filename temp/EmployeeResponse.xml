@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<empns:empResponse xmlns:empns="http://www.journaldev.com/Employee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.journaldev.com/Employee Employee.xsd ">
+  <empns:id>0</empns:id>
+  <empns:role>empns:role</empns:role>
+  <empns:fullName>empns:fullName</empns:fullName>
+</empns:empResponse>

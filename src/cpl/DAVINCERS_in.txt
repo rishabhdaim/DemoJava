@@ -1,0 +1,3 @@
+cat dog potato
+cat dob potato
+0

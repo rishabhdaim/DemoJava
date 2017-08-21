@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+
+	<!-- Datasource connection settings in Spring -->
+	<!-- <bean id="springDataSource " class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="url " value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="username " value="root" />
+		<property name="password " value="root" />
+		<property name="removeAbandoned " value="true" />
+		<property name="initialSize" value="20" />
+		<property name="maxActive " value="30" />
+	</bean> -->
+
+	<!-- Dao class configuration in spring -->
+	<!-- <bean id="EmployeeDatabaseBean" class="db.EmployeeDAOImpl">
+		<property name="dataSource" ref="springDataSource" />
+	</bean> -->
+	
+	<bean id="twitter" class="journel.dev.spring.TwitterServiceImpl"></bean>
+    <bean id="MyXMLApp" class="journel.dev.spring.SpringXmlApplication">
+        <property name="service" ref="twitter"></property>
+    </bean>
+    
+</beans>

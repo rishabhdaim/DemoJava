@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="journel.dev.hibernate.Items" table="ITEMS">
+		<id name="id" type="long">
+			<column name="id" />
+			<generator class="sequence">  
+                <param name="sequence">item_seq</param>  
+            </generator>
+		</id>
+		<property name="itemId" type="string">
+            <column name="item_id"></column>
+        </property>
+        <property name="itemTotal" type="double">
+            <column name="item_total"></column>
+        </property>
+        <property name="quantity" type="integer">
+            <column name="quantity"></column>
+        </property>
+         
+        <many-to-one name="cart" class="journel.dev.hibernate.Cart">
+            <column name="cart_id" not-null="true"></column>
+        </many-to-one>
+	</class>
+</hibernate-mapping>
