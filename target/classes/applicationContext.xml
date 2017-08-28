@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p = "http://www.springframework.org/schema/p"
 	xsi:schemaLocation="
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
@@ -22,9 +23,85 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 		<property name="dataSource" ref="springDataSource" />
 	</bean> -->
 	
-	<bean id="twitter" class="journel.dev.spring.TwitterServiceImpl"></bean>
-    <bean id="MyXMLApp" class="journel.dev.spring.SpringXmlApplication">
+	<bean id="twitter" class="journel.dev.spring.TwitterServiceImpl" lazy-init="true"></bean>
+    <bean id="MyXMLApp" class="journel.dev.spring.SpringXmlApplication" lazy-init="true">
         <property name="service" ref="twitter"></property>
     </bean>
+    
+    <bean id="beanTemplate" abstract="true">
+   		<property name = "message" value = "Hello World!"/>
+      	<property name = "message2" value = "Hello Second World!"/>
+      	<property name = "message3" value = "Namaste India!"/>
+    </bean>
+    
+    <bean id = "helloWorld" class = "tutorialpoints.spring.HelloWorld" lazy-init="true" scope="singleton" init-method="init" destroy-method="destroy">
+      <property name = "message" value = "Hello World!"/>
+      <property name = "message2" value = "Hello Second World!"/>
+   </bean>
+   
+   <!-- using p:namespace for multiple instance variables -->
+   <bean id = "helloIndia" class = "tutorialpoints.spring.HelloIndia" lazy-init="true" scope="singleton" parent="helloWorld" 
+   		p:message = "Hello World!" p:message3 = "Namaste India!" >
+   </bean>
+   
+   <bean id = "helloIndia2" class = "tutorialpoints.spring.HelloIndia" lazy-init="true" scope="singleton" parent="beanTemplate"></bean>
+   
+   <bean id = "helloWorld2" class = "tutorialpoints.spring.HelloWorld" lazy-init="true" scope="prototype">
+      <property name = "message" value = "Hello World! Prototype"/>
+   </bean>
+   
+   <bean class="tutorialpoints.spring.InitHelloWorld"></bean>
+   
+   <!-- Text Editor & spell checker -->
+   <bean id = "textEditor" class = "tutorialpoints.spring.TextEditor" lazy-init="true" scope="singleton">
+      <constructor-arg>
+		<bean id = "spellChecker" class = "tutorialpoints.spring.SpellChecker" lazy-init="true" scope="singleton"></bean>      	
+      </constructor-arg>
+      <constructor-arg type="java.lang.String" value="Notepad++" />
+   </bean>
+   
+   <!-- Collections injection -->
+   <bean id = "javaCollection" class = "tutorialpoints.spring.JavaCollection" lazy-init="true" scope="singleton">
+   		<!-- results in a setAddressList(java.util.List) call -->
+	      <property name = "addressList">
+	         <list>
+	            <value>INDIA</value>
+	            <value>Russia</value>
+	            <value>USA</value>
+	            <value>USA</value>
+	         </list>
+	      </property>
+	
+	      <!-- results in a setAddressSet(java.util.Set) call -->
+	      <property name = "addressSet">
+	         <set>
+	            <value>INDIA</value>
+	            <value>Russia</value>
+	            <value>USA</value>
+	            <value>USA</value>
+	         </set>
+	      </property>
+	
+	      <!-- results in a setAddressMap(java.util.Map) call -->
+	      <property name = "addressMap">
+	         <map>
+	            <entry key = "1" value = "INDIA"/>
+	            <entry key = "2" value = "Russia"/>
+	            <entry key = "3" value = "USA"/>
+	            <entry key = "4" value = "USA"/>
+	         </map>
+	      </property>
+	      
+	      <!-- results in a setAddressProp(java.util.Properties) call -->
+	      <property name = "addressProp">
+	         <props>
+	            <prop key = "one">INDIA</prop>
+	            <prop key = "one">INDIA</prop>
+	            <prop key = "two">Russia</prop>
+	            <prop key = "three">USA</prop>
+	            <prop key = "four">USA</prop>
+	         </props>
+	      </property>
+   </bean>
     
 </beans>
