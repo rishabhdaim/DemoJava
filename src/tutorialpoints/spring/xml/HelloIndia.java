@@ -1,7 +1,10 @@
 /**
  * 
  */
-package tutorialpoints.spring;
+package tutorialpoints.spring.xml;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 /**
  * 
@@ -50,12 +53,14 @@ public class HelloIndia {
 	public final void setMessage3(String message3) {
 		this.message3 = message3;
 	}
-
+	
+	@PostConstruct
 	public void init() {
-		System.out.println("Bean initialization");
+		System.out.println("Bean initialization helloindia");
 	}
 	
+	@PreDestroy
 	public void destroy() {
-		System.out.println("Bean destruction");
+		System.out.println("Bean destruction helloindia");
 	}
 }

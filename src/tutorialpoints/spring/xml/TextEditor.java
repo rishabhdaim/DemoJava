@@ -1,7 +1,7 @@
 /**
  * 
  */
-package tutorialpoints.spring;
+package tutorialpoints.spring.xml;
 
 /**
  * @author Rishabh.Daim
@@ -9,7 +9,7 @@ package tutorialpoints.spring;
  */
 public class TextEditor {
 
-	private SpellChecker spellChecker;
+	private final SpellChecker spellChecker;
 
 	public TextEditor(SpellChecker spellChecker, String editorName) {
 		System.out.println("Inside TextEditor constructor : " + editorName);

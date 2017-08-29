@@ -1,7 +1,7 @@
 /**
  * 
  */
-package tutorialpoints.spring;
+package tutorialpoints.spring.xml;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;

@@ -7,6 +7,13 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import tutorialpoints.spring.annotation.Profile;
+import tutorialpoints.spring.annotation.Student;
+import tutorialpoints.spring.xml.HelloIndia;
+import tutorialpoints.spring.xml.HelloWorld;
+import tutorialpoints.spring.xml.JavaCollection;
+import tutorialpoints.spring.xml.TextEditor;
+
 /**
  * @author Rishabh.Daim
  *
@@ -70,6 +77,20 @@ public class XmlBasedSpringIoC {
 		javaCollection.getAddressMap();
 		javaCollection.getAddressProp();
 		System.out.println("-----------------------");
+		
+		Student student = context.getBean("student", Student.class);
+		System.out.println("Name : " + student.getName());
+	    System.out.println("Age : " + student.getAge());
+	    System.out.println("-----------------------");
+	    
+	    tutorialpoints.spring.annotation.TextEditor textEditor = context.getBean("textEditor1", tutorialpoints.spring.annotation.TextEditor.class);
+	    textEditor.spellCheck();
+	    System.out.println("-----------------------");
+	    
+	    Profile profile = context.getBean("profile", Profile.class);
+	    profile.printName();
+	    profile.printAge();
+	    System.out.println("-----------------------");
 		
 		if (context instanceof AbstractApplicationContext) {
 			((AbstractApplicationContext)context).registerShutdownHook();

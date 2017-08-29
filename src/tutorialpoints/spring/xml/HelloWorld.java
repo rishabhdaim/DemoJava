@@ -1,7 +1,7 @@
 /**
  * 
  */
-package tutorialpoints.spring;
+package tutorialpoints.spring.xml;
 
 /**
  * 
@@ -37,10 +37,10 @@ public class HelloWorld {
 	}
 
 	public void init() {
-		System.out.println("Bean initialization");
+		System.out.println("Bean initialization helloworld");
 	}
 	
 	public void destroy() {
-		System.out.println("Bean destruction");
+		System.out.println("Bean destruction helloworld");
 	}
 }

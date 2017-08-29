@@ -1,7 +1,7 @@
 /**
  * 
  */
-package tutorialpoints.spring;
+package tutorialpoints.spring.xml;
 
 import java.util.List;
 import java.util.Map;

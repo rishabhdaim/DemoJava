@@ -1,7 +1,7 @@
 /**
  * 
  */
-package tutorialpoints.spring;
+package tutorialpoints.spring.xml;
 
 /**
  * @author Rishabh.Daim
