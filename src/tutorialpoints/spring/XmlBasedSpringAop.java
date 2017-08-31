@@ -6,6 +6,7 @@ package tutorialpoints.spring;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import tutorialpoints.spring.annotation.Profile;
 import tutorialpoints.spring.annotation.Student;
 
 /**
@@ -30,6 +31,12 @@ public class XmlBasedSpringAop {
 		} catch (Exception e) {
 			
 		}
+		
+		System.out.println("---------------------------------------");
+		
+		Profile profile = context.getBean("profile", Profile.class);
+		profile.printName();
+		profile.printAge();
 	}
 
 }

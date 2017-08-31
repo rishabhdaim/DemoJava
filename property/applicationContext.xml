@@ -156,6 +156,8 @@
    
    <bean id = "logging" class="tutorialpoints.spring.xml.aop.Logging" lazy-init="true" scope="singleton"/>
    
+   <bean id = "logging2" class="tutorialpoints.spring.annotation.aspectj.Logging" lazy-init="true" scope="singleton"/>
+   
    <!-- to define aop -->
    <aop:config>
    		<aop:aspect id="log" ref="logging">

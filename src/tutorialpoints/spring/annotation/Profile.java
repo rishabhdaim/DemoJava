@@ -21,11 +21,15 @@ public class Profile {
 		System.out.println("Inside Profile constructor.");
 	}
 
-	public void printAge() {
-		System.out.println("Age : " + student.getAge());
+	public Integer printAge() {
+		Integer age = student.getAge();
+		System.out.println("Age : " + age);
+		return age;
 	}
 
-	public void printName() {
-		System.out.println("Name : " + student.getName());
+	public String printName() {
+		String name = student.getName();
+		System.out.println("Name : " + name);
+		return name;
 	}
 }
