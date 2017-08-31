@@ -16,4 +16,12 @@ public class SpellChecker {
 	public void checkSpelling() {
 		System.out.println("Inside checkSpelling.");
 	}
+	
+	public void init() {
+		System.out.println("Init Spell Checker bean");
+	}
+	
+	public void destroy() {
+		System.out.println("destroy Spell Checker bean");
+	}
 }
