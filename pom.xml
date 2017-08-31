@@ -106,7 +106,14 @@
 			<version>${spring-framework.version}</version>
 		</dependency>
 
-		<!-- Spring expression support-->
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>${spring-framework.version}</version>
+		</dependency>
+
+		<!-- Spring expression support -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-expression</artifactId>

@@ -3,7 +3,6 @@
  */
 package tutorialpoints.spring;
 
-import org.springframework.beans.factory.config.CustomEditorConfigurer;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import tutorialpoints.spring.annotation.TextEditor;

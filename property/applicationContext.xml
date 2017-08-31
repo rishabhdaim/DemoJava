@@ -4,9 +4,11 @@
 	xmlns:util="http://www.springframework.org/schema/util"
 	xmlns:context = "http://www.springframework.org/schema/context"
 	xmlns:p = "http://www.springframework.org/schema/p"
+	xmlns:aop = "http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.xsd 
-	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
 
 
 	<!-- Datasource connection settings in Spring -->
@@ -28,6 +30,8 @@
 	
 	<!-- to allow wiring using annotations -->
 	<context:annotation-config/>
+	<!-- to allow aspects using annotations -->
+	<aop:aspectj-autoproxy />
 	
 	<bean id="twitter" class="journel.dev.spring.TwitterServiceImpl" lazy-init="true"></bean>
     <bean id="MyXMLApp" class="journel.dev.spring.SpringXmlApplication" lazy-init="true">
@@ -146,7 +150,21 @@
    
    <bean id = "profile" class="tutorialpoints.spring.annotation.Profile" lazy-init="true" />
    
-   <bean id = "textEditor1" class = "tutorialpoints.spring.annotation.TextEditor" lazy-init="true" scope="singleton">
-   </bean>
+   <bean id = "textEditor1" class = "tutorialpoints.spring.annotation.TextEditor" lazy-init="true" scope="singleton" />
+   
+   <!-- aspect Oriented programming -->
+   
+   <bean id = "logging" class="tutorialpoints.spring.xml.aop.Logging" lazy-init="true" scope="singleton"/>
+   
+   <!-- to define aop -->
+   <aop:config>
+   		<aop:aspect id="log" ref="logging">
+   			<aop:pointcut expression="execution(* tutorialpoints.spring.annotation.Student.*(..))" id="selectAll"/>
+   			<aop:before method="beforeAdvice" pointcut-ref="selectAll"/>
+   			<aop:after method="afterAdvice" pointcut-ref="selectAll"/>
+   			<aop:after-returning method="afterReturningAdvice" pointcut-ref="selectAll" returning="retVal"/>
+   			<aop:after-throwing method="afterThrowingAdvice" pointcut-ref="selectAll" throwing="ex"/>
+   		</aop:aspect>
+   </aop:config>
     
 </beans>

@@ -14,14 +14,15 @@ public class Student {
 
 	private Integer age;
 	private String name;
-	
+
 	// similar to required but now, age is not mandatory
-	@Autowired(required=false)
+	@Autowired(required = false)
 	public void setAge(Integer age) {
 		this.age = age;
 	}
 
 	public Integer getAge() {
+		System.out.println("Age : " + age);
 		return age;
 	}
 
@@ -31,6 +32,12 @@ public class Student {
 	}
 
 	public String getName() {
+		System.out.println("Name : " + name);
 		return name;
+	}
+
+	public void printThrowException() {
+		System.out.println("Exception raised");
+		throw new IllegalArgumentException();
 	}
 }
