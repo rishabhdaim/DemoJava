@@ -12,21 +12,32 @@
 
 
 	<!-- Datasource connection settings in Spring -->
-	<!-- <bean id="springDataSource " class="org.apache.commons.dbcp.BasicDataSource"
+	<!-- <bean id="springDataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
-		<property name="url " value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="username " value="root" />
-		<property name="password " value="root" />
-		<property name="removeAbandoned " value="true" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+		<property name="removeAbandoned" value="true" />
 		<property name="initialSize" value="20" />
-		<property name="maxActive " value="30" />
+		<property name="maxActive" value="30" />
 	</bean> -->
+	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="url" value="jdbc:oracle:thin:@IONDELVM84:1521:DELHIDEV" />
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="username" value="rkdaim" />
+		<property name="password" value="rkdaimpwd" />
+	</bean>
 
 	<!-- Dao class configuration in spring -->
 	<!-- <bean id="EmployeeDatabaseBean" class="db.EmployeeDAOImpl">
 		<property name="dataSource" ref="springDataSource" />
 	</bean> -->
+	
+	<bean id = "studentJDBCTemplate" class = "tutorialpoints.spring.jdbc.StudentJDBCTemplate">
+      <constructor-arg ref="dataSource"></constructor-arg>    
+   </bean>
 	
 	<!-- to allow wiring using annotations -->
 	<context:annotation-config/>
@@ -140,12 +151,14 @@
    <bean id = "student" class="tutorialpoints.spring.annotation.Student" lazy-init="true">
    		<property name = "name" value = "Zara" />
    		<property name = "age"  value = "11" />
+   		<property name = "id"  value = "1" />
    </bean>
    
    <!-- Definition for student1 bean -->
    <bean id = "student1" class = "tutorialpoints.spring.annotation.Student" lazy-init="true">
       <property name = "name" value = "Nuha" />
       <property name = "age" value = "2"/>
+      <property name = "id"  value = "2" />
    </bean>
    
    <bean id = "profile" class="tutorialpoints.spring.annotation.Profile" lazy-init="true" />

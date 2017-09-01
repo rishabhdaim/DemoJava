@@ -14,6 +14,7 @@ public class Student {
 
 	private Integer age;
 	private String name;
+	private Integer id;
 
 	// similar to required but now, age is not mandatory
 	@Autowired(required = false)
@@ -22,7 +23,7 @@ public class Student {
 	}
 
 	public Integer getAge() {
-		System.out.println("Age : " + age);
+		//System.out.println("Age : " + age);
 		return age;
 	}
 
@@ -32,8 +33,23 @@ public class Student {
 	}
 
 	public String getName() {
-		System.out.println("Name : " + name);
+		//System.out.println("Name : " + name);
 		return name;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public Integer getId() {
+		//System.out.println("Id : " + id);
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public void printThrowException() {

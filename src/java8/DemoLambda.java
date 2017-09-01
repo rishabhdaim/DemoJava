@@ -16,7 +16,7 @@ public class DemoLambda {
 	 */
 	public static void main(String[] args) {
 		// In its simplest form, a lambda could be represented as a
-		// comma-separated list of parameters, the –> symbol and the body. For
+		// comma-separated list of parameters, the ï¿½> symbol and the body. For
 		// example:
 		Arrays.asList(1, 2, 3, 4, 5, 6, 7).forEach(
 				e -> System.out.print(e + " "));
@@ -29,7 +29,7 @@ public class DemoLambda {
 				(String e) -> System.out.print(e + " "));
 
 		System.out.println();
-		// In case lambda’s body is more complex, it may be wrapped into square
+		// In case lambdaï¿½s body is more complex, it may be wrapped into square
 		// brackets, as the usual function definition in Java. For example:
 
 		Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9).forEach(e -> {
