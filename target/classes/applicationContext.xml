@@ -5,10 +5,12 @@
 	xmlns:context = "http://www.springframework.org/schema/context"
 	xmlns:p = "http://www.springframework.org/schema/p"
 	xmlns:aop = "http://www.springframework.org/schema/aop"
+	xmlns:tx = "http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.xsd 
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
-	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
 
 	<!-- Datasource connection settings in Spring -->
@@ -29,6 +31,10 @@
 		<property name="username" value="rkdaim" />
 		<property name="password" value="rkdaimpwd" />
 	</bean>
+	
+	<bean id = "platformTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
 
 	<!-- Dao class configuration in spring -->
 	<!-- <bean id="EmployeeDatabaseBean" class="db.EmployeeDAOImpl">
@@ -36,8 +42,23 @@
 	</bean> -->
 	
 	<bean id = "studentJDBCTemplate" class = "tutorialpoints.spring.jdbc.StudentJDBCTemplate">
-      <constructor-arg ref="dataSource"></constructor-arg>    
+      <constructor-arg  name="dataSource" ref="dataSource"></constructor-arg>
+      <constructor-arg 	name="platformTransactionManager" ref="platformTransactionManager"></constructor-arg>    
    </bean>
+   
+   <!-- Tx AOP -->
+	<tx:advice id="txAdvice" transaction-manager="platformTransactionManager">
+		<tx:attributes>
+			<tx:method name="createAopTx"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<tx:annotation-driven proxy-target-class="true" transaction-manager="platformTransactionManager" />
+	
+	<aop:config>
+		<aop:pointcut expression="execution(* tutorialpoints.spring.jdbc.StudentJDBCTemplate.createAopTx(..))" id="createOperation"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="createOperation"/>
+	</aop:config>
 	
 	<!-- to allow wiring using annotations -->
 	<context:annotation-config/>
