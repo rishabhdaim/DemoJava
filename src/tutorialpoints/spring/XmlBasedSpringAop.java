@@ -3,11 +3,13 @@
  */
 package tutorialpoints.spring;
 
+import org.springframework.aop.aspectj.annotation.AspectJProxyFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import tutorialpoints.spring.annotation.Profile;
 import tutorialpoints.spring.annotation.Student;
+import tutorialpoints.spring.annotation.aspectj.Logging;
 
 /**
  * @author Rishabh.Daim
@@ -37,6 +39,13 @@ public class XmlBasedSpringAop {
 		Profile profile = context.getBean("profile", Profile.class);
 		profile.printName();
 		profile.printAge();
+		
+		System.out.println("---------------------------------------");
+		
+		AspectJProxyFactory proxyFactory = new AspectJProxyFactory(profile);
+		proxyFactory.addAspect(Logging.class);
+		Profile proxyProfile = proxyFactory.getProxy();
+		proxyProfile.printName();
+		proxyProfile.printAge();
 	}
-
 }

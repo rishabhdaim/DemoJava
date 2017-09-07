@@ -120,7 +120,34 @@
 			<version>${spring-framework.version}</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-oxm -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+			<version>${spring-framework.version}</version>
+		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.springframework.batch/spring-batch-core -->
+		<dependency>
+			<groupId>org.springframework.batch</groupId>
+			<artifactId>spring-batch-core</artifactId>
+			<version>3.0.8.RELEASE</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.batch/spring-batch-infrastructure -->
+		<dependency>
+			<groupId>org.springframework.batch</groupId>
+			<artifactId>spring-batch-infrastructure</artifactId>
+			<version>3.0.8.RELEASE</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.batch/spring-batch-test -->
+		<dependency>
+			<groupId>org.springframework.batch</groupId>
+			<artifactId>spring-batch-test</artifactId>
+			<version>3.0.8.RELEASE</version>
+			<scope>test</scope>
+		</dependency>
 
 		<!-- Logging with SLF4J & LogBack -->
 		<dependency>
@@ -261,6 +288,12 @@
 			<groupId>com.mscharhag</groupId>
 			<artifactId>et</artifactId>
 			<version>0.1.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>2.0.7</version>
 		</dependency>
 	</dependencies>
 </project>
