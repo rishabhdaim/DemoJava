@@ -46,8 +46,8 @@ public class StudentJDBCTemplate implements StudentDAO {
 	 */
 	@Override
 	public void create(String name, Integer age) {
-		final String SQL = "insert into Student (name, age) values (?, ?)";
-		jdbcTemplate.update(SQL, name, age);
+		final String sql = "insert into Student (name, age) values (?, ?)";
+		jdbcTemplate.update(sql, name, age);
 		System.out.println("Created Record Name = " + name + " Age = " + age);
 	}
 	
@@ -60,15 +60,15 @@ public class StudentJDBCTemplate implements StudentDAO {
 		final TransactionStatus status = platformTransactionManager.getTransaction(new DefaultTransactionDefinition());
 		
 		try {
-			String SQL1 = "insert into Student (name, age) values (?, ?)";
-			jdbcTemplate.update(SQL1, name, age);
+			String sql1 = "insert into Student (name, age) values (?, ?)";
+			jdbcTemplate.update(sql1, name, age);
 
 			// Get the latest student id to be used in Marks table
-			String SQL2 = "select max(id) from Student";
-			int sid = jdbcTemplate.queryForObject(SQL2, int.class);
+			String sql2 = "select max(id) from Student";
+			int sid = jdbcTemplate.queryForObject(sql2, int.class);
 
-			String SQL3 = "insert into Marks(sid, marks, year) values (?, ?, ?)";
-			jdbcTemplate.update(SQL3, sid, marks, year);
+			String sql3 = "insert into Marks(sid, marks, year) values (?, ?, ?)";
+			jdbcTemplate.update(sql3, sid, marks, year);
 
 			System.out.println("Created Name = " + name + ", Age = " + age);
 			platformTransactionManager.commit(status);
@@ -86,15 +86,15 @@ public class StudentJDBCTemplate implements StudentDAO {
 	@Override
 	public void createAopTx(String name, Integer age, Integer marks, Integer year) {
 		try {
-			String SQL1 = "insert into Student (name, age) values (?, ?)";
-			jdbcTemplate.update(SQL1, name, age);
+			String sql1 = "insert into Student (name, age) values (?, ?)";
+			jdbcTemplate.update(sql1, name, age);
 
 			// Get the latest student id to be used in Marks table
-			String SQL2 = "select max(id) from Student";
-			int sid = jdbcTemplate.queryForObject(SQL2, int.class);
+			String sql2 = "select max(id) from Student";
+			int sid = jdbcTemplate.queryForObject(sql2, int.class);
 
-			String SQL3 = "insert into Marks(sid, marks, year) values (?, ?, ?)";
-			jdbcTemplate.update(SQL3, sid, marks, year);
+			String sql3 = "insert into Marks(sid, marks, year) values (?, ?, ?)";
+			jdbcTemplate.update(sql3, sid, marks, year);
 
 			System.out.println("Created Name = " + name + ", Age = " + age);
 			
@@ -113,8 +113,8 @@ public class StudentJDBCTemplate implements StudentDAO {
 	 */
 	@Override
 	public Student getStudent(Integer id) {
-		/*String SQL = "select * from Student where id = ?";
-		Student student = jdbcTemplate.queryForObject(SQL, new Object[] { id }, new StudentMapper());*/
+		/*String sql = "select * from Student where id = ?";
+		Student student = jdbcTemplate.queryForObject(sql, new Object[] { id }, new StudentMapper());*/
 		
 		SqlParameterSource in = new MapSqlParameterSource().addValue("IN_ID", id);
 		Map<String, Object> result = jdbcCall.execute(in);
@@ -134,14 +134,14 @@ public class StudentJDBCTemplate implements StudentDAO {
 	 */
 	@Override
 	public List<Student> listStudents() {
-		String SQL = "select * from Student";
-		return jdbcTemplate.query(SQL, new StudentMapper());
+		String sql = "select * from Student";
+		return jdbcTemplate.query(sql, new StudentMapper());
 	}
 	
 	@Override
 	public List<StudentMarks> listStudentMarks() {
-		String SQL = "select * from Student, Marks where Student.id = Marks.sid";
-		return jdbcTemplate.query(SQL, new StudentMarksMapper());
+		String sql = "select * from Student, Marks where Student.id = Marks.sid";
+		return jdbcTemplate.query(sql, new StudentMarksMapper());
 	}
 
 	/*
@@ -151,8 +151,8 @@ public class StudentJDBCTemplate implements StudentDAO {
 	 */
 	@Override
 	public void delete(Integer id) {
-		String SQL = "delete from Student where id = ?";
-		jdbcTemplate.update(SQL, id);
+		String sql = "delete from Student where id = ?";
+		jdbcTemplate.update(sql, id);
 		System.out.println("Deleted Record with ID = " + id);
 	}
 
@@ -164,8 +164,8 @@ public class StudentJDBCTemplate implements StudentDAO {
 	 */
 	@Override
 	public void update(Integer id, Integer age) {
-		String SQL = "update Student set age = ? where id = ?";
-		jdbcTemplate.update(SQL, age, id);
+		String sql = "update Student set age = ? where id = ?";
+		jdbcTemplate.update(sql, age, id);
 		System.out.println("Updated Record with ID = " + id);
 	}
 }
