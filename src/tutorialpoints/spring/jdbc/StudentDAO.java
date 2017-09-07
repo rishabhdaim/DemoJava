@@ -54,6 +54,12 @@ public interface StudentDAO {
 	 * corresponding to a passed student id.
 	 */
 	public void delete(Integer id);
+	
+	
+	/**
+	 * This is the method used to delete all records from student & marks table
+	 */
+	public void truncate();
 
 	/**
 	 * This is the method to be used to update a record into the Student table.

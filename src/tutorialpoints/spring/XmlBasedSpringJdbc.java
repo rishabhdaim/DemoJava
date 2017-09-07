@@ -26,6 +26,9 @@ public class XmlBasedSpringJdbc {
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
 		StudentJDBCTemplate studentJDBCTemplate = context.getBean("studentJDBCTemplate", StudentJDBCTemplate.class);
+		
+		System.out.println("removing previous records");
+		// studentJDBCTemplate.truncate();
 
 		System.out.println("------Records Creation--------");
 		studentJDBCTemplate.create("Zara", 11);

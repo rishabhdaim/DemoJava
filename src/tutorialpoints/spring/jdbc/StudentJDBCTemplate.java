@@ -155,6 +155,31 @@ public class StudentJDBCTemplate implements StudentDAO {
 		jdbcTemplate.update(sql, id);
 		System.out.println("Deleted Record with ID = " + id);
 	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see tutorialpoints.spring.jdbc.StudentDAO#truncate()
+	 */
+	@Override
+	public void truncate() {
+
+		final TransactionStatus status = platformTransactionManager.getTransaction(new DefaultTransactionDefinition());
+		try {
+			// remove all rows from student table
+			String sql1 = "delete from Student";
+			jdbcTemplate.update(sql1);
+
+			// Get the latest student id to be used in Marks table
+			String sql2 = "delete from Marks";
+			jdbcTemplate.update(sql2);
+
+			platformTransactionManager.commit(status);
+		} catch (DataAccessException e) {
+			System.err.println("Error in creating record, rolling back");
+			platformTransactionManager.rollback(status);
+			throw e;
+		}
+	}
 
 	/*
 	 * (non-Javadoc)
