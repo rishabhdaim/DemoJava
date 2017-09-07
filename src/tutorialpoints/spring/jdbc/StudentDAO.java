@@ -36,6 +36,12 @@ public interface StudentDAO {
 	 * table corresponding to a passed student id.
 	 */
 	public Student getStudent(Integer id);
+	
+	/**
+	 * This is the method to be used to list down a record from the Student
+	 * table corresponding to a passed student id.
+	 */
+	public String getStudentName(int id);
 
 	/**
 	 * This is the method to be used to list down all the records from the

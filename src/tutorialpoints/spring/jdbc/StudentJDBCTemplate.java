@@ -29,13 +29,16 @@ import tutorialpoints.spring.jdbc.tx.StudentMarksMapper;
 public class StudentJDBCTemplate implements StudentDAO {
 
 	private final JdbcTemplate jdbcTemplate;
-	private final SimpleJdbcCall jdbcCall;
+	private final SimpleJdbcCall jdbcCallProc;
+	private final SimpleJdbcCall jdbcCallFunc;
 	private final PlatformTransactionManager platformTransactionManager;
 
 	public StudentJDBCTemplate(final DataSource dataSource, final PlatformTransactionManager platformTransactionManager) {
 		this.platformTransactionManager = platformTransactionManager;
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
-		this.jdbcCall = new SimpleJdbcCall(dataSource).withProcedureName("GETSTUDENT");
+		this.jdbcTemplate.setResultsMapCaseInsensitive(true);
+		this.jdbcCallProc = new SimpleJdbcCall(dataSource).withProcedureName("GETSTUDENT");
+		this.jdbcCallFunc = new SimpleJdbcCall(dataSource).withFunctionName("GETSTUDENTNAME").withSchemaName("rkdaim");
 	}
 
 	/*
@@ -117,7 +120,7 @@ public class StudentJDBCTemplate implements StudentDAO {
 		Student student = jdbcTemplate.queryForObject(sql, new Object[] { id }, new StudentMapper());*/
 		
 		SqlParameterSource in = new MapSqlParameterSource().addValue("IN_ID", id);
-		Map<String, Object> result = jdbcCall.execute(in);
+		Map<String, Object> result = jdbcCallProc.execute(in);
 		
 		Student student = new Student();
 		student.setId(id);
@@ -125,6 +128,16 @@ public class StudentJDBCTemplate implements StudentDAO {
 		student.setAge(((BigDecimal)result.get("OUT_AGE")).intValueExact());
 		
 		return student;
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see tutorialpoints.spring.jdbc.StudentDAO#getStudentName(java.lang.Integer)
+	 */
+	@Override
+	public String getStudentName(int id) {
+		SqlParameterSource in  = new MapSqlParameterSource().addValue("IN_ID", id);
+		return jdbcCallFunc.executeFunction(String.class, in);
 	}
 
 	/*

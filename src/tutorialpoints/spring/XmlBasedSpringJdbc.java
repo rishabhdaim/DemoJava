@@ -52,6 +52,8 @@ public class XmlBasedSpringJdbc {
 		System.out.print("ID : " + student.getId());
 		System.out.print(", Name : " + student.getName());
 		System.out.println(", Age : " + student.getAge());
+		
+		System.out.println("------Getting Student name with id 2------------");
+		// System.out.println("Name is : " + studentJDBCTemplate.getStudentName(2));
 	}
-
 }
