@@ -65,6 +65,26 @@ public class Java8Tutorial {
 	        this.lastName = lastName;
 	    }
 	}
+	
+	static class Outer {
+	    Nested nested = new Nested();
+	    Nested getNested() {
+	        return nested;
+	    }
+	}
+	static class Nested {
+	    Inner inner = new Inner();
+	    Inner getInner() {
+	        return inner;
+	    }
+	}
+	static class Inner {
+	    String foo = "rishudaim";
+	    String getFoo() {
+	        return foo;
+	    }
+	}
+
 
 
 
@@ -181,6 +201,14 @@ public class Java8Tutorial {
 		optional.orElse("fallback");    // "bam"
 
 		optional.ifPresent((s) -> System.out.println(s.charAt(0)));     // "b"
+		
+		Outer outer = new Outer();
+		
+		if (outer != null && outer.nested != null && outer.nested.inner != null) {
+			System.out.println(outer.nested.inner.foo);
+		}
+		
+		Optional.of(new Outer()).map(Outer::getNested).map(Nested::getInner).map(Inner::getFoo).ifPresent(System.out::println);
 		
 		// Streams
 		
