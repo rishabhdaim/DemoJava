@@ -18,6 +18,8 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 /**
  * @author diam
@@ -314,5 +316,15 @@ public class Java8Tutorial {
 
 		map.merge(9, "concat", (value, newValue) -> value.concat(newValue));
 		map.get(9); 
+		
+		// Strings
+		
+		String s = String.join(";", "foobar", "foo", "bar");
+		System.out.println(s);
+		String s2 = s.chars().distinct().mapToObj(c -> String.valueOf((char)c)).sorted().collect(Collectors.joining());
+		System.out.println(s2);
+		
+		s2 = Pattern.compile(";").splitAsStream(s).filter(c -> c.contains("bar")).sorted().collect(Collectors.joining(":"));
+		System.out.println(s2);
 	}
 }

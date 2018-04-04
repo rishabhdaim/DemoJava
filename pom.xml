@@ -53,10 +53,11 @@
 	</properties>
 
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>14.0.1</version>
+			<version>16.0.1</version>
 		</dependency>
 		<!-- Spring and Transactions -->
 		<dependency>
@@ -184,18 +185,10 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.0.5</version>
 		</dependency>
-		<!-- <dependency>
-			<groupId>oracle</groupId>
-			<artifactId>oracleJdbcDriver</artifactId>
-			<version>11.1.0.7.0</version>
-			<scope>provided</scope>
-		</dependency> -->
-		<!-- <dependency>
-			<groupId>com.sybase</groupId>
-			<artifactId>sybase-driver</artifactId>
-			<version>12</version>
-			<scope>provided</scope>
-		</dependency> -->
+		<!-- <dependency> <groupId>oracle</groupId> <artifactId>oracleJdbcDriver</artifactId> 
+			<version>11.1.0.7.0</version> <scope>provided</scope> </dependency> -->
+		<!-- <dependency> <groupId>com.sybase</groupId> <artifactId>sybase-driver</artifactId> 
+			<version>12</version> <scope>provided</scope> </dependency> -->
 		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
