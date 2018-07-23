@@ -10,7 +10,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class InputStreamToFile {

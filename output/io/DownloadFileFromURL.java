@@ -11,7 +11,7 @@ import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class DownloadFileFromURL {

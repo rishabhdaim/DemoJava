@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import db.DBConnection;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class MySqlHelper {

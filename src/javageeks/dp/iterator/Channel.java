@@ -4,7 +4,7 @@
 package javageeks.dp.iterator;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class Channel {

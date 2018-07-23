@@ -4,7 +4,7 @@
 package javageeks.dp.composite;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class Triangle implements Shape {

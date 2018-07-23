@@ -7,7 +7,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class ProducerConsumerService {

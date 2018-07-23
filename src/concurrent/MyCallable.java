@@ -6,7 +6,7 @@ package concurrent;
 import java.util.concurrent.Callable;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class MyCallable implements Callable<String> {

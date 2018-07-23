@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class JDBCStatementBatch {

@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 import java.util.logging.XMLFormatter;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class LoggingExample {

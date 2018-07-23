@@ -4,7 +4,7 @@
 package javageeks.dp.state;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class TVStopState implements State {

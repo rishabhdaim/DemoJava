@@ -12,7 +12,7 @@ import oracle.sql.STRUCT;
 import oracle.sql.StructDescriptor;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class JDBCStoredProcedureOracleStruct {

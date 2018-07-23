@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.Arrays;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class JDBCBatchExceptions {

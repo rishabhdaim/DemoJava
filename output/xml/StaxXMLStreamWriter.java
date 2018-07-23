@@ -13,7 +13,7 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class StaxXMLStreamWriter {

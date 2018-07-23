@@ -4,7 +4,7 @@
 package javageeks.dp.factory;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class LaptopFactory implements ComputerAbstractFactory {

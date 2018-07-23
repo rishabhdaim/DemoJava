@@ -6,7 +6,7 @@ package concurrent;
 import java.util.concurrent.BlockingQueue;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class Consumer implements Runnable {

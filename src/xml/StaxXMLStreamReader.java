@@ -14,7 +14,7 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class StaxXMLStreamReader {

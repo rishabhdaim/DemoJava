@@ -6,7 +6,7 @@ package io;
 import java.io.File;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class GetFileExtension {

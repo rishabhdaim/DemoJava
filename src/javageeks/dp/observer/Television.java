@@ -4,7 +4,7 @@
 package javageeks.dp.observer;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class Television implements Observer {

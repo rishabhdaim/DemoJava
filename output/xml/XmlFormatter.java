@@ -28,7 +28,7 @@ import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class XmlFormatter {

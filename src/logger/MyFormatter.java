@@ -8,7 +8,7 @@ import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class MyFormatter extends Formatter {

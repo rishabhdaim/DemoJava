@@ -4,7 +4,7 @@
 package javageeks.dp.chainofresponsibility;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public interface DispenseChain {

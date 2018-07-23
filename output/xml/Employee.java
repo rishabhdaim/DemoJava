@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 @XmlRootElement(name = "emp")

@@ -4,7 +4,7 @@
 package javageeks.dp.strategy;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class CashOnDelivery implements PaymentStrategy {

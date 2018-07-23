@@ -4,13 +4,13 @@
 package threads;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class ThreadSafety {
 
 	/**
-	 * @author aa49442
+	 * @author rishabh.daim
 	 * 
 	 */
 	private static class ProcessingThread implements Runnable {

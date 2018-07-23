@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class Period implements Serializable {

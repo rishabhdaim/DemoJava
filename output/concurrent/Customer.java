@@ -4,7 +4,7 @@
 package concurrent;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class Customer {

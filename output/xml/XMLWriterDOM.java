@@ -20,7 +20,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class XMLWriterDOM {

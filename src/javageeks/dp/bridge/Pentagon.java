@@ -4,7 +4,7 @@
 package javageeks.dp.bridge;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class Pentagon extends Shape {

@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class JDBCPreparedStatementNULL {

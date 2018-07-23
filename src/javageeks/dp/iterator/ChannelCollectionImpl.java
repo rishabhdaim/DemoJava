@@ -8,7 +8,7 @@ import java.util.List;
 import com.google.common.collect.Lists;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class ChannelCollectionImpl implements ChannelCollection {
@@ -51,7 +51,7 @@ public class ChannelCollectionImpl implements ChannelCollection {
 	
 	// iterator below
 	/**
-	 * @author aa49442
+	 * @author rishabh.daim
 	 * 
 	 */
 	private class ChannelIteratorImpl implements ChannelIterator {

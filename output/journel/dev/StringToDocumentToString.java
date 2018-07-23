@@ -18,7 +18,7 @@ import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class StringToDocumentToString {

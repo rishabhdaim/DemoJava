@@ -4,7 +4,7 @@
 package journel.dev;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class LongestPalindromeFinder {

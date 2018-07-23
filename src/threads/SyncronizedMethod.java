@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SyncronizedMethod {
 	/**
-	 * @author aa49442
+	 * @author rishabh.daim
 	 * 
 	 */
 	private static class HashMapProcessor implements Runnable {

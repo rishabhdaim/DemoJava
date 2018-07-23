@@ -9,7 +9,7 @@ import java.awt.Graphics;
 /**
  * Fly weight interface
  * 
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public interface Shape {

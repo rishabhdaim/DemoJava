@@ -16,7 +16,7 @@ import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class JDOMXMLWriter {

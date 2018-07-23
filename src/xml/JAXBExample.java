@@ -11,7 +11,7 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class JAXBExample {

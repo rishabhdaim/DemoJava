@@ -6,13 +6,13 @@ package threads;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class JavaAtomic {
 
 	/**
-	 * @author aa49442
+	 * @author rishabh.daim
 	 * 
 	 */
 	private static class ProcessingThread implements Runnable {

@@ -16,7 +16,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class DrawingClient extends JFrame {

@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class FacadePatternTest {

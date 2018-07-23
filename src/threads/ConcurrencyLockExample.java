@@ -8,7 +8,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class ConcurrencyLockExample implements Runnable {

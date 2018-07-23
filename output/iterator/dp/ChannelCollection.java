@@ -4,7 +4,7 @@
 package iterator.dp;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public interface ChannelCollection {

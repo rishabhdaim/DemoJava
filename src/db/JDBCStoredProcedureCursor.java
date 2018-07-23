@@ -11,7 +11,7 @@ import java.util.Scanner;
 import oracle.jdbc.OracleTypes;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class JDBCStoredProcedureCursor {

@@ -21,7 +21,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class StringToDocumentToString {

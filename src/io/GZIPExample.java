@@ -10,7 +10,7 @@ import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class GZIPExample {

@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class FutureTaskExample {

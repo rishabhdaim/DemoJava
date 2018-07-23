@@ -10,7 +10,7 @@ import com.google.common.collect.Maps;
 /**
  * This is fly weight factory to create and store fly weight instances
  * 
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class ShapeFactory {

@@ -6,7 +6,7 @@ package javageeks.dp.singleton;
 import java.io.Serializable;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class EagerInitializedSingleton implements Serializable {

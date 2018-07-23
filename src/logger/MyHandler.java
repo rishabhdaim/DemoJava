@@ -7,7 +7,7 @@ import java.util.logging.LogRecord;
 import java.util.logging.StreamHandler;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class MyHandler extends StreamHandler {

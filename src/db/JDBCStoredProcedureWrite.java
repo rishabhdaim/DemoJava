@@ -8,7 +8,7 @@ import java.sql.Connection;
 import java.util.Scanner;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class JDBCStoredProcedureWrite {

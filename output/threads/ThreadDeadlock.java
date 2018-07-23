@@ -4,7 +4,7 @@
 package threads;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class ThreadDeadlock {

@@ -11,7 +11,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 @Documented
@@ -19,7 +19,7 @@ import java.lang.annotation.Target;
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
 public @interface MethodInfo {
-	String author() default "aa49442";
+	String author() default "rishabh.daim";
 
 	String date();
 

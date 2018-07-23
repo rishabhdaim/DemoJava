@@ -6,7 +6,7 @@ package threads;
 import java.util.Date;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class WorkerThread implements Runnable {

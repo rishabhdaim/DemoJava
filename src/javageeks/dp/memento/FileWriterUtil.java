@@ -4,7 +4,7 @@
 package javageeks.dp.memento;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class FileWriterUtil {
@@ -36,7 +36,7 @@ public class FileWriterUtil {
 	}
 
 	/**
-	 * @author aa49442
+	 * @author rishabh.daim
 	 * 
 	 */
 	private class Memento {

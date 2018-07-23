@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class AppendFile {

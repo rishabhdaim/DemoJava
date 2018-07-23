@@ -9,7 +9,7 @@ import java.util.concurrent.FutureTask;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class FutureTaskExample {

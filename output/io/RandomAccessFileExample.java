@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class RandomAccessFileExample {

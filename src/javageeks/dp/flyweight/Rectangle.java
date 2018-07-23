@@ -7,7 +7,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class Rectangle implements Shape {

@@ -18,7 +18,7 @@ import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class StaxXMLReader {

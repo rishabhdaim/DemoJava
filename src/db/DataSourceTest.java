@@ -12,7 +12,7 @@ import java.sql.Statement;
 import javax.sql.DataSource;
 
 /**
- * @author aa49442
+ * @author rishabh.daim
  * 
  */
 public class DataSourceTest {
