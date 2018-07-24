@@ -8,8 +8,8 @@ package javageeks.dp.visitor;
  * 
  */
 public class Fruit implements ItemElement {
-	private int pricePerKg;
-	private int weight;
+	private final int pricePerKg;
+	private final int weight;
 	private final String name;
 
 	/**
@@ -17,7 +17,7 @@ public class Fruit implements ItemElement {
 	 * @param weight
 	 * @param name
 	 */
-	public Fruit(int pricePerKg, int weight, String name) {
+	public Fruit(final int pricePerKg, final int weight, final String name) {
 		super();
 		this.pricePerKg = pricePerKg;
 		this.weight = weight;

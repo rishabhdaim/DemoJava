@@ -1,7 +1,5 @@
 package journel.dev;
 
-import oracle.jdbc.driver.OracleDriver;
-
 public class ClassLoaderTest {
 
 	/**
@@ -16,6 +14,6 @@ public class ClassLoaderTest {
 						.getClassLoader());
 		System.out.println("class loader for this class: "
 				+ ClassLoaderTest.class.getClassLoader());
-		System.out.println(OracleDriver.class.getClassLoader());
+//		System.out.println(OracleDriver.class.getClassLoader());
 	}
 }
