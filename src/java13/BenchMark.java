@@ -21,7 +21,7 @@ public class BenchMark {
 
     public static void main(String... args) {
         l = new ArrayList<>();
-        for (int c = 0; c < 200_000_000; c++) {
+        for (int c = 0; c < 100_000_000; c++) {
             l.add(new Object());
         }
         System.out.println("Hello Java 13!");
