@@ -153,5 +153,20 @@
     <orderEntry type="library" name="Maven: org.junit.platform:junit-platform-suite-api:1.6.0-M1" level="project" />
     <orderEntry type="library" name="Maven: org.awaitility:awaitility:4.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.hamcrest:hamcrest:2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.openjdk.jmh:jmh-core:1.22" level="project" />
+    <orderEntry type="library" name="Maven: net.sf.jopt-simple:jopt-simple:4.6" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-math3:3.2" level="project" />
+    <orderEntry type="library" name="Maven: org.openjdk.jmh:jmh-generator-annprocess:1.22" level="project" />
+    <orderEntry type="library" name="Maven: org.openjdk.jmh:jmh-scala-benchmark-archetype:1.22" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.collections:eclipse-collections:10.1.0.M2" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.collections:eclipse-collections-api:10.1.0.M2" level="project" />
+    <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.11.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.inject:guice:4.2.2" level="project" />
+    <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
+    <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.6" level="project" />
+    <orderEntry type="library" name="Maven: io.vavr:vavr:0.10.2" level="project" />
+    <orderEntry type="library" name="Maven: io.vavr:vavr-match:0.10.2" level="project" />
+    <orderEntry type="library" name="Bundled Protobuf Distribution" level="application" />
   </component>
 </module>
