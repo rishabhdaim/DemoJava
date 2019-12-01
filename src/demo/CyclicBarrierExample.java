@@ -9,41 +9,32 @@ public class CyclicBarrierExample {
 	// Runnable task for each thread
 	private static class Task implements Runnable {
 
-		private CyclicBarrier barrier;
+		private final CyclicBarrier barrier;
 
-		public Task(CyclicBarrier barrier) {
+		@org.jetbrains.annotations.Contract(pure = true)
+		Task(final CyclicBarrier barrier) {
 			this.barrier = barrier;
 		}
 
 		@Override
 		public void run() {
 			try {
-				System.out.println(Thread.currentThread().getName()
-						+ " is waiting on barrier");
+				System.out.printf("%s is waiting on barrier\n", Thread.currentThread().getName());
 				barrier.await();
-				System.out.println(Thread.currentThread().getName()
-						+ " has crossed the barrier");
-			} catch (InterruptedException ex) {
-				Logger.getLogger(CyclicBarrierExample.class.getName()).log(
-						Level.SEVERE, null, ex);
-			} catch (BrokenBarrierException ex) {
-				Logger.getLogger(CyclicBarrierExample.class.getName()).log(
-						Level.SEVERE, null, ex);
+				System.out.printf("%s has crossed the barrier\n", Thread.currentThread().getName());
+			} catch (InterruptedException | BrokenBarrierException ex) {
+				Logger.getLogger(CyclicBarrierExample.class.getName()).log(Level.SEVERE, null, ex);
 			}
 		}
 	}
 
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 
 		// creating CyclicBarrier with 3 parties i.e. 3 Threads needs to call
 		// await()
-		final CyclicBarrier cb = new CyclicBarrier(3, new Runnable() {
-			@Override
-			public void run() {
-				// This task will be executed once all thread reaches barrier
-				System.out
-						.println("All parties are arrived at barrier, lets play");
-			}
+		final CyclicBarrier cb = new CyclicBarrier(3, () -> {
+			// This task will be executed once all thread reaches barrier
+			System.out.println("All parties are arrived at barrier, lets play");
 		});
 
 		// starting each of thread

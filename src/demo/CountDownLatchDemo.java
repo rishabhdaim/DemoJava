@@ -1,5 +1,10 @@
 package demo;
 
+import com.google.common.base.Preconditions;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
 import java.util.concurrent.CountDownLatch;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -11,12 +16,9 @@ public class CountDownLatchDemo {
 	 */
 	public static void main(String[] args) {
 		final CountDownLatch latch = new CountDownLatch(3);
-		Thread cacheService = new Thread(new Service("CacheService", 1000,
-				latch));
-		Thread alertService = new Thread(new Service("AlertService", 4000,
-				latch));
-		Thread validationService = new Thread(new Service("ValidationService",
-				8000, latch));
+		Thread cacheService = new Thread(Service.of("CacheService", 1000, latch));
+		Thread alertService = new Thread(Service.of("AlertService", 4000, latch));
+		Thread validationService = new Thread(Service.of("ValidationService",8000, latch));
 
 		cacheService.start(); // separate thread will initialize CacheService
 		alertService.start(); // another thread for AlertService initialization
@@ -37,8 +39,7 @@ public class CountDownLatchDemo {
 
 		try {
 			latch.await(); // main thread is waiting on CountDownLatch to finish
-			System.out
-					.println("All services are up, Application is starting now");
+			System.out.println("All services are up, Application is starting now");
 		} catch (InterruptedException ie) {
 			ie.printStackTrace();
 		}
@@ -53,10 +54,20 @@ public class CountDownLatchDemo {
 		private final int timeToStart;
 		private final CountDownLatch latch;
 
-		public Service(String name, int timeToStart, CountDownLatch latch) {
+		@Contract(pure = true)
+		private Service(final String name, final int timeToStart, final CountDownLatch latch) {
 			this.name = name;
 			this.timeToStart = timeToStart;
 			this.latch = latch;
+		}
+
+		@NotNull
+		@Contract("_, _, _ -> new")
+		static Service of(final String name, final int timeToStart, final CountDownLatch latch) {
+			Objects.requireNonNull(name);
+			Objects.requireNonNull(latch);
+			Preconditions.checkArgument(timeToStart > 0);
+			return new Service(name, timeToStart, latch);
 		}
 
 		@Override
@@ -64,13 +75,10 @@ public class CountDownLatchDemo {
 			try {
 				Thread.sleep(timeToStart);
 			} catch (InterruptedException ex) {
-				Logger.getLogger(Service.class.getName()).log(Level.SEVERE,
-						null, ex);
+				Logger.getLogger(Service.class.getName()).log(Level.SEVERE, null, ex);
 			}
 			System.out.println(name + " is Up");
 			latch.countDown(); // reduce count of CountDownLatch by 1
 		}
-
 	}
-
 }
