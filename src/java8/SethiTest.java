@@ -1,7 +1,6 @@
 package java8;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * Created by diam on 5/2/2018.
@@ -31,9 +30,9 @@ public class SethiTest {
             tList.add(new T2(entry.getValue(), entry.getKey()));
         }
 
-        Collections.sort(tList, (o1, o2) -> {
-            int result = Integer.valueOf(o1.freq).compareTo(o2.freq);
-            return (result != 0) ? result : Integer.valueOf(o1.value).compareTo(o2.value);
+        tList.sort((o1, o2) -> {
+            int result = Integer.compare(o1.freq, o2.freq);
+            return (result != 0) ? result : Integer.compare(o1.value, o2.value);
         });
 
         int i = 0;
@@ -59,8 +58,8 @@ public class SethiTest {
 
         @Override
         public int compareTo(T2 o) {
-            int result = Integer.valueOf(this.freq).compareTo(o.freq);
-            return (result != 0) ? result : Integer.valueOf(this.value).compareTo(o.value);
+            int result = Integer.compare(this.freq, o.freq);
+            return (result != 0) ? result : Integer.compare(this.value, o.value);
         }
     }
 }
