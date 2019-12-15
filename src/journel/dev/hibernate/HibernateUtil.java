@@ -34,10 +34,8 @@ public class HibernateUtil {
              
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
             System.out.println("Hibernate serviceRegistry created");
-             
-            SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-             
-            return sessionFactory;
+
+            return configuration.buildSessionFactory(serviceRegistry);
         }
         catch (Throwable ex) {
             // Make sure you log the exception, as it might be swallowed
@@ -55,10 +53,8 @@ public class HibernateUtil {
              
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
             System.out.println("Hibernate Annotation serviceRegistry created");
-             
-            SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-             
-            return sessionFactory;
+
+            return configuration.buildSessionFactory(serviceRegistry);
         }
         catch (Throwable ex) {
             // Make sure you log the exception, as it might be swallowed
@@ -88,10 +84,8 @@ public class HibernateUtil {
          
         ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
         System.out.println("Hibernate Java Config serviceRegistry created");
-         
-        SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-         
-        return sessionFactory;
+
+            return configuration.buildSessionFactory(serviceRegistry);
         }
         catch (Throwable ex) {
             System.err.println("Initial SessionFactory creation failed." + ex);

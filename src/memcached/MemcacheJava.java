@@ -89,11 +89,7 @@ public class MemcacheJava {
 	         // get stats
 	         System.out.println("MemCache stats : " + mcc.getStats());
 			 
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (ExecutionException e) {
+		} catch (IOException | InterruptedException | ExecutionException e) {
 			e.printStackTrace();
 		} finally {
 			// Shutdowns the memcached client

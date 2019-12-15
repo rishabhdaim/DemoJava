@@ -43,7 +43,7 @@ public class HibernateCriteriaExamples {
          
         // Get with ID, creating new Criteria to remove all the settings
         criteria = session.createCriteria(Employee2.class)
-                    .add(Restrictions.eq("id", Integer.valueOf(3)));
+                    .add(Restrictions.eq("id", 3));
         Employee2 emp = (Employee2) criteria.uniqueResult();
         System.out.println("Name=" + emp.getName() + ", City="
                 + emp.getAddress().getCity());

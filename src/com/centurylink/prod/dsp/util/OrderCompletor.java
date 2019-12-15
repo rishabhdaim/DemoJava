@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.Properties;
 import java.util.logging.FileHandler;
 import java.util.logging.Formatter;
@@ -17,21 +18,18 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class OrderCompletor {
-	private static final Logger logger = Logger.getLogger(OrderCompletor.class
-			.getName());
+	private static final Logger logger = Logger.getLogger(OrderCompletor.class.getName());
 	private static final Properties dbProperties = new Properties();
 	private static final Properties orderIdProps = new Properties();
 	private static final Properties loggerProps = new Properties();
-	private static String[] orderIds;
 	private static Connection dspConnection;
 	private static Connection omniVueConnection;
 	private static Connection osrConnection;
-	private static Handler handler;
-	private static Formatter formatter;
+
 	static {
 		try {
-			loggerProps.load(OrderCompletor.class.getClassLoader()
-					.getResourceAsStream("logger.properties"));
+			loggerProps.load(Objects.requireNonNull(OrderCompletor.class.getClassLoader()
+					.getResourceAsStream("logger.properties")));
 			if (loggerProps.getProperty(DbConstants.LOG_LEVEL, "ALL")
 					.equalsIgnoreCase("INFO"))
 				logger.setLevel(Level.INFO);
@@ -41,17 +39,17 @@ public class OrderCompletor {
 					+ logger.getLevel());
 			logger.finest("properties loaded from logger.properties are : "
 					+ loggerProps.keySet().toString());
-			handler = new FileHandler(loggerProps.getProperty(
+			Handler handler = new FileHandler(loggerProps.getProperty(
 					DbConstants.LOG_PATH, "orderUpdator.log"),
-					Integer.valueOf(loggerProps.getProperty(
+					Integer.parseInt(loggerProps.getProperty(
 							DbConstants.LOG_MAX_SIZE, "1024")),
-					Integer.valueOf(loggerProps.getProperty(
+					Integer.parseInt(loggerProps.getProperty(
 							DbConstants.LOG_MAX_FILES, "5")), true);
-			formatter = new SimpleFormatter();
+			Formatter formatter = new SimpleFormatter();
 			logger.addHandler(handler);
 			handler.setFormatter(formatter);
-			dbProperties.load(OrderCompletor.class.getClassLoader()
-					.getResourceAsStream("dbDetails.properties"));
+			dbProperties.load(Objects.requireNonNull(OrderCompletor.class.getClassLoader()
+					.getResourceAsStream("dbDetails.properties")));
 			logger.finest("Db properties loaded successfully..");
 			logger.finest("db properties are : "
 					+ dbProperties.keySet().toString());
@@ -100,11 +98,11 @@ public class OrderCompletor {
 					dbProperties.getProperty(DbConstants.OSR_PROD_PASSWORD));
 
 			logger.finest("Osr connection made successfully..");
-			orderIdProps.load(OrderCompletor.class.getClassLoader()
-					.getResourceAsStream("orderId.properties"));
+			orderIdProps.load(Objects.requireNonNull(OrderCompletor.class.getClassLoader()
+					.getResourceAsStream("orderId.properties")));
 
 			logger.finest("order ids loaded successfully..");
-			orderIds = orderIdProps.getProperty(DbConstants.ORDER_IDS).split(
+			String[] orderIds = orderIdProps.getProperty(DbConstants.ORDER_IDS).split(
 					",");
 			logger.info("Order ids are : " + Arrays.toString(orderIds));
 

@@ -11,8 +11,7 @@ public class MapLeaker {
 
 	public ExecutorService executorService = Executors.newFixedThreadPool(10);
 	private Random random = new Random();
-	private Map<Task, TaskStatus> map = Collections
-			.synchronizedMap(new HashMap<Task, TaskStatus>());
+	private Map<Task, TaskStatus> map = Collections.synchronizedMap(new HashMap<>());
 
 	private enum TaskStatus {
 		NOT_STARTED, STARTED, FINISHED
