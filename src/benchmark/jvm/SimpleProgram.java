@@ -5,6 +5,9 @@ package benchmark.jvm;
 // -XX:NativeMemoryTracking=[Summary|detail]  && jcmd <PID> VM.native_memory [detail|Summary]
 // -XX:+AlwaysPreTouch
 // -XX:-AdaptiveSizePolicy
+
+// G1GC : -XX:MaxGCPauseMillis=100 default is 250  -XX:+PrintAdaptiveSizePolicy to know what caused full gc
+// -XX:MetaspaceSize to increase perm objects
 public class SimpleProgram {
     static int blackhole;
 

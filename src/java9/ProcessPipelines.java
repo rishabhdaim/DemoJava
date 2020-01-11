@@ -14,7 +14,7 @@ public class ProcessPipelines {
         ProcessBuilder grepPdf = new ProcessBuilder().command("grep", "properties").redirectOutput(ProcessBuilder.Redirect.INHERIT);
         List<Process> lsThenGrep = ProcessBuilder.startPipeline(asList(ls, grepPdf));
         System.out.println("Started processes...");
-        CompletableFuture[] lsThenGrepFutures = lsThenGrep.stream()
+        var lsThenGrepFutures = lsThenGrep.stream()
                 // onExit returns a CompletableFuture<Process>
                 .map(Process::onExit)
                 .map(processFuture -> processFuture.thenAccept(
