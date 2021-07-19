@@ -27,13 +27,13 @@
 				<configuration>
 					<compilerArgument>--enable-preview</compilerArgument>
 					<release>13</release>
-					<annotationProcessorPaths>
-						<path>
-							<groupId>com.google.dagger</groupId>
-							<artifactId>dagger-compiler</artifactId>
-							<version>2.25</version>
-						</path>
-					</annotationProcessorPaths>
+<!--					<annotationProcessorPaths>-->
+<!--						<path>-->
+<!--							<groupId>com.google.dagger</groupId>-->
+<!--							<artifactId>dagger-compiler</artifactId>-->
+<!--							<version>2.25</version>-->
+<!--						</path>-->
+<!--					</annotationProcessorPaths>-->
 				</configuration>
 			</plugin>
 			<plugin>
@@ -460,11 +460,17 @@
 			<artifactId>okhttp</artifactId>
 			<version>4.2.2</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.google.dagger/dagger -->
+<!--		&lt;!&ndash; https://mvnrepository.com/artifact/com.google.dagger/dagger &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>com.google.dagger</groupId>-->
+<!--			<artifactId>dagger</artifactId>-->
+<!--			<version>2.25</version>-->
+<!--		</dependency>-->
+		<!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on -->
 		<dependency>
-			<groupId>com.google.dagger</groupId>
-			<artifactId>dagger</artifactId>
-			<version>2.25</version>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-jdk15on</artifactId>
+			<version>1.65</version>
 		</dependency>
 	</dependencies>
 </project>
