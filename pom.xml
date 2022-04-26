@@ -25,8 +25,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 				<configuration>
-					<compilerArgument>--enable-preview</compilerArgument>
-					<release>13</release>
+<!--					<compilerArgument>&#45;&#45;enable-preview</compilerArgument>-->
+					<release>17</release>
 <!--					<annotationProcessorPaths>-->
 <!--						<path>-->
 <!--							<groupId>com.google.dagger</groupId>-->
@@ -39,13 +39,13 @@
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
-					<argLine>--enable-preview</argLine>
+<!--					<argLine>&#45;&#45;enable-preview</argLine>-->
 				</configuration>
 			</plugin>
 			<plugin>
 				<artifactId>maven-failsafe-plugin</artifactId>
 				<configuration>
-					<argLine>--enable-preview</argLine>
+<!--					<argLine>&#45;&#45;enable-preview</argLine>-->
 				</configuration>
 			</plugin>
 			<plugin>
