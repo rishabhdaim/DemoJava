@@ -72,7 +72,7 @@
 		<spring-framework.version>5.2.1.RELEASE</spring-framework.version>
 
 		<!-- Hibernate / JPA -->
-		<hibernate.version>5.4.8.Final</hibernate.version>
+		<hibernate.version>5.4.24.Final</hibernate.version>
 		<!-- JMH Bench Marking-->
 		<jmh.version>1.22</jmh.version>
 
