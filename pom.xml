@@ -48,6 +48,24 @@
 <!--					<argLine>&#45;&#45;enable-preview</argLine>-->
 				</configuration>
 			</plugin>
+<!--			<plugin>-->
+<!--				<groupId>org.apache.maven.plugins</groupId>-->
+<!--				<artifactId>maven-enforcer-plugin</artifactId>-->
+<!--				<version>3.0.0-M3</version>-->
+<!--				<executions>-->
+<!--					<execution>-->
+<!--						<id>enforce-banned-dependencies</id>-->
+<!--						<goals>-->
+<!--							<goal>enforce</goal>-->
+<!--						</goals>-->
+<!--						<configuration>-->
+<!--							<rules>-->
+<!--								<banTransitiveDependencies/>-->
+<!--							</rules>-->
+<!--						</configuration>-->
+<!--					</execution>-->
+<!--				</executions>-->
+<!--			</plugin>-->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
@@ -69,18 +87,18 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<!-- Spring -->
-		<spring-framework.version>5.2.1.RELEASE</spring-framework.version>
+		<spring-framework.version>5.3.19</spring-framework.version>
 
 		<!-- Hibernate / JPA -->
-		<hibernate.version>5.4.24.Final</hibernate.version>
+		<hibernate.version>5.6.8.Final</hibernate.version>
 		<!-- JMH Bench Marking-->
-		<jmh.version>1.22</jmh.version>
+		<jmh.version>1.34</jmh.version>
 
 		<!-- Logging -->
-		<logback.version>1.2.0</logback.version>
-		<slf4j.version>1.7.5</slf4j.version>
+		<logback.version>1.2.11</logback.version>
+		<slf4j.version>1.7.36</slf4j.version>
 		<!-- AspectJ -->
-		<aspectj.version>1.7.4</aspectj.version>
+		<aspectj.version>1.9.9.1</aspectj.version>
 
 	</properties>
 
@@ -89,7 +107,7 @@
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>29.0-jre</version>
+			<version>31.1-jre</version>
 		</dependency>
 		<!-- Spring and Transactions -->
 		<dependency>
@@ -164,21 +182,21 @@
 		<dependency>
 			<groupId>org.springframework.batch</groupId>
 			<artifactId>spring-batch-core</artifactId>
-			<version>4.0.0.RELEASE</version>
+			<version>4.3.5</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework.batch/spring-batch-infrastructure -->
 		<dependency>
 			<groupId>org.springframework.batch</groupId>
 			<artifactId>spring-batch-infrastructure</artifactId>
-			<version>3.0.8.RELEASE</version>
+			<version>4.3.5</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework.batch/spring-batch-test -->
 		<dependency>
 			<groupId>org.springframework.batch</groupId>
 			<artifactId>spring-batch-test</artifactId>
-			<version>3.0.8.RELEASE</version>
+			<version>4.3.5</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -187,7 +205,6 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>${slf4j.version}</version>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
@@ -210,12 +227,12 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-simple</artifactId>
-			<version>1.7.5</version>
+			<version>1.7.36</version>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.16</version>
+			<version>8.0.28</version>
 		</dependency>
 		<!-- <dependency> <groupId>oracle</groupId> <artifactId>oracleJdbcDriver</artifactId> 
 			<version>11.1.0.7.0</version> <scope>provided</scope> </dependency> -->
@@ -229,32 +246,32 @@
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
-			<version>1.1.0.Final</version>
+			<version>2.0.1.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>6.0.23.Final</version>
+			<version>7.0.4.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.el</groupId>
 			<artifactId>javax.el-api</artifactId>
-			<version>2.2.4</version>
+			<version>3.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.glassfish.web</groupId>
 			<artifactId>javax.el</artifactId>
-			<version>2.2.4</version>
+			<version>2.2.6</version>
 		</dependency>
 		<dependency>
 			<groupId>org.neo4j</groupId>
 			<artifactId>neo4j</artifactId>
-			<version>3.5.0</version>
+			<version>4.4.6</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.13.1</version>
+			<version>4.13.2</version>
 		</dependency>
 		<!-- AspectJ dependencies -->
 		<dependency>
@@ -270,7 +287,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
-			<version>2.8.0</version>
+			<version>2.13.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
@@ -281,12 +298,12 @@
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
-			<version>3.17</version>
+			<version>5.2.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
-			<version>3.12</version>
+			<version>5.2.2</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/net.spy/spymemcached -->
 		<dependency>
@@ -298,7 +315,7 @@
 		<dependency>
 			<groupId>org.jdom</groupId>
 			<artifactId>jdom2</artifactId>
-			<version>2.0.6</version>
+			<version>2.0.6.1</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-io -->
 		<dependency>
@@ -310,18 +327,18 @@
 		<dependency>
 			<groupId>com.mscharhag</groupId>
 			<artifactId>et</artifactId>
-			<version>0.1.0</version>
+			<version>0.2.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
 		<dependency>
 			<groupId>org.apache.pdfbox</groupId>
 			<artifactId>pdfbox</artifactId>
-			<version>2.0.24</version>
+			<version>2.0.26</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.xml.bind</groupId>
 			<artifactId>jaxb-api</artifactId>
-			<version>2.3.1</version>
+			<version>2.4.0-b180830.0359</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.annotation</groupId>
@@ -332,31 +349,31 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.22</version>
+			<version>1.18.24</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.9</version>
+			<version>3.12.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
 		<dependency>
 			<groupId>org.assertj</groupId>
 			<artifactId>assertj-core</artifactId>
-			<version>3.14.0</version>
+			<version>3.22.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-runner -->
 		<dependency>
 			<groupId>org.junit.platform</groupId>
 			<artifactId>junit-platform-runner</artifactId>
-			<version>1.6.0-M1</version>
+			<version>1.8.2</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.awaitility/awaitility -->
 		<dependency>
 			<groupId>org.awaitility</groupId>
 			<artifactId>awaitility</artifactId>
-			<version>4.0.1</version>
+			<version>4.2.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.openjdk.jmh/jmh-core -->
 		<dependency>
@@ -380,67 +397,67 @@
 		<dependency>
 			<groupId>org.eclipse.collections</groupId>
 			<artifactId>eclipse-collections</artifactId>
-			<version>10.1.0.M2</version>
+			<version>11.0.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java -->
 		<dependency>
 			<groupId>com.google.protobuf</groupId>
 			<artifactId>protobuf-java</artifactId>
-			<version>3.16.1</version>
+			<version>3.20.1</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.google.inject/guice -->
 		<dependency>
 			<groupId>com.google.inject</groupId>
 			<artifactId>guice</artifactId>
-			<version>4.2.2</version>
+			<version>5.1.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
-			<version>2.8.6</version>
+			<version>2.9.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/io.vavr/vavr -->
 		<dependency>
 			<groupId>io.vavr</groupId>
 			<artifactId>vavr</artifactId>
-			<version>0.10.2</version>
+			<version>0.10.4</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.jetbrains/annotations -->
 		<dependency>
 			<groupId>org.jetbrains</groupId>
 			<artifactId>annotations</artifactId>
-			<version>18.0.0</version>
+			<version>23.0.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.google.flogger/flogger -->
 		<dependency>
 			<groupId>com.google.flogger</groupId>
 			<artifactId>flogger</artifactId>
-			<version>0.4</version>
+			<version>0.7.4</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.pcollections/pcollections -->
 		<dependency>
 			<groupId>org.pcollections</groupId>
 			<artifactId>pcollections</artifactId>
-			<version>3.1.0</version>
+			<version>3.1.4</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.oath.cyclops/cyclops -->
 		<dependency>
 			<groupId>com.oath.cyclops</groupId>
 			<artifactId>cyclops</artifactId>
-			<version>10.3.3</version>
+			<version>10.4.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.organicdesign/Paguro -->
 		<dependency>
 			<groupId>org.organicdesign</groupId>
 			<artifactId>Paguro</artifactId>
-			<version>3.1.2</version>
+			<version>3.10.1</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.thrift/libthrift -->
 		<dependency>
 			<groupId>org.apache.thrift</groupId>
 			<artifactId>libthrift</artifactId>
-			<version>0.14.0</version>
+			<version>0.16.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.google.caliper/caliper -->
 		<dependency>
@@ -452,13 +469,13 @@
 		<dependency>
 			<groupId>org.immutables</groupId>
 			<artifactId>value</artifactId>
-			<version>2.8.2</version>
+			<version>2.9.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
 		<dependency>
 			<groupId>com.squareup.okhttp3</groupId>
 			<artifactId>okhttp</artifactId>
-			<version>4.2.2</version>
+			<version>4.9.3</version>
 		</dependency>
 <!--		&lt;!&ndash; https://mvnrepository.com/artifact/com.google.dagger/dagger &ndash;&gt;-->
 <!--		<dependency>-->
@@ -470,7 +487,7 @@
 		<dependency>
 			<groupId>org.bouncycastle</groupId>
 			<artifactId>bcprov-jdk15on</artifactId>
-			<version>1.67</version>
+			<version>1.70</version>
 		</dependency>
 	</dependencies>
 </project>
