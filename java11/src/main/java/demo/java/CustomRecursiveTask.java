@@ -1,4 +1,4 @@
-package demo.java.java7;
+package demo.java;
 
 import java.util.Arrays;
 import java.util.Collection;

@@ -1,4 +1,4 @@
-package demo.java.java7;
+package demo.java;
 
 import java.io.IOException;
 import java.nio.file.Files;

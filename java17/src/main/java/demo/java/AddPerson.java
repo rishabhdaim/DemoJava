@@ -1,4 +1,4 @@
-package demo.java.com.proto;
+package demo.java;
 
 import demo.java.com.proto.model.AddressBookProtos.AddressBook;
 import demo.java.com.proto.model.AddressBookProtos.Person;

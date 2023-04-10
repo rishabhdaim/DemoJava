@@ -1,11 +1,10 @@
 package demo.java;
 
-import lombok.*;
-
 import java.util.LongSummaryStatistics;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
 import static java.lang.String.format;
 
 /**
@@ -27,11 +26,11 @@ public class Java13PreviewFeatures {
     private static void teeingCollector() {
         var count = gimmeStream().count();
         var sum = gimmeStream().mapToLong(l -> l).sum();
-        System.out.println(format("Sum is %s and count is %s", sum, count));
+        System.out.printf("Sum is %s and count is %s%n", sum, count);
 
         // reducing
-        CountAndSum countAndSum = gimmeStream().reduce(new CountAndSum(0L, 0L), (cas, e) -> new CountAndSum(cas.getCount() + 1, cas.getSum() + e ),
-                (cas1, cas2) -> new CountAndSum(cas1.getCount() + cas2.getCount(), cas1.getSum() + cas2.getSum()));
+        CountAndSum countAndSum = gimmeStream().reduce(new CountAndSum(0L, 0L), (cas, e) -> new CountAndSum(cas.count() + 1, cas.sum() + e ),
+                (cas1, cas2) -> new CountAndSum(cas1.count() + cas2.count(), cas1.sum() + cas2.sum()));
         System.out.println(countAndSum);
 
         // teeing
@@ -109,9 +108,6 @@ public class Java13PreviewFeatures {
         System.out.println(day + " " + value);
     }
 
-    @Data
-    private static class CountAndSum {
-        @NonNull private final long count;
-        @NonNull private final long sum;
+    private record CountAndSum(long count, long sum) {
     }
 }

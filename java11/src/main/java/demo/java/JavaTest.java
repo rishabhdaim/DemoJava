@@ -1,4 +1,4 @@
-package demo.java.java8;
+package demo.java;
 
 import com.google.common.collect.Lists;
 

@@ -1,4 +1,4 @@
-package demo.java.java7;
+package demo.java;
 
 public class SwitchString {
 

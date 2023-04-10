@@ -1,6 +1,6 @@
 package demo.java.benchmark.caliper;
 
-public  final class Factorial {
+public final class Factorial {
 
     static long recursive(int n) {
         return switch (checkArgument(n)) {

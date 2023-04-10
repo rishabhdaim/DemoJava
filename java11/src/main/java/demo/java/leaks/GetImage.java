@@ -1,4 +1,4 @@
-package demo.java.memory.leaks;
+package demo.java.leaks;
 
 import org.aspectj.util.FileUtil;
 

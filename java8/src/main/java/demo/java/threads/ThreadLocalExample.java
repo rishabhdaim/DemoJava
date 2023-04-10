@@ -37,7 +37,7 @@ public class ThreadLocalExample implements Runnable {
 	 * @throws InterruptedException
 	 */
 	public static void main(String[] args) throws InterruptedException {
-		var obj = new ThreadLocalExample();
+		ThreadLocalExample obj = new ThreadLocalExample();
 		for (int i = 0; i < 10; i++) {
 			Thread t = new Thread(obj, "" + i);
 			Thread.sleep(new Random().nextInt(1000));
