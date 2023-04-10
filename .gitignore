@@ -5,3 +5,4 @@ output/
 *.setings/
 *.iml
 *.java-version
+.DS_Store
