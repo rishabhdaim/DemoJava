@@ -9,8 +9,8 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>java20</artifactId>
-    <name>Java 20</name>
+    <artifactId>java21</artifactId>
+    <name>Java 21</name>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
