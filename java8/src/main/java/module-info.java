@@ -22,7 +22,7 @@ module java8 {
     requires org.apache.pdfbox;
     requires org.apache.commons.lang3;
     requires commons.dbcp;
-    requires commons.io;
+    requires org.apache.commons.io;
     requires org.jetbrains.annotations;
     requires spymemcached;
     requires junit;
@@ -30,5 +30,5 @@ module java8 {
     requires jackson.core.asl;
     requires jackson.mapper.asl;
     requires et;
-    exports demo.java.com.proto.model;
+    exports demo.java8.com.proto.model;
 }

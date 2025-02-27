@@ -1,4 +1,4 @@
-import demo.java.com.proto.model.AddressBookProtos;
+import demo.java8.com.proto.model.AddressBookProtos;
 
 module java17 {
     requires java8;
@@ -11,7 +11,7 @@ module java17 {
     requires jmh.core;
     requires jmh.generator.annprocess;
 
-    uses demo.java.com.proto.model.AddressBookProtos;
+    uses demo.java8.com.proto.model.AddressBookProtos;
     uses AddressBookProtos.Person;
     uses AddressBookProtos.AddressBook;
 }
