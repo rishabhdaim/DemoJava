@@ -79,6 +79,10 @@ public class ImmutableSet {
         for (Integer i : immutableSet) {
             bh.consume(i);
         }
+        for(int i = 0; i < size; i++){
+            bh.consume(immutableSet.contains(i));
+        }
+
     }
 
     @Benchmark
@@ -87,6 +91,9 @@ public class ImmutableSet {
         for (Integer i : unmodifiableSet){
             bh.consume(i);
         }
+        for(int i = 0; i < size; i++){
+            bh.consume(unmodifiableSet.contains(i));
+        }
     }
 
     @Benchmark
@@ -94,6 +101,9 @@ public class ImmutableSet {
         Set<Integer> unmodifiableSet = Collections.unmodifiableSet(toLinkedSet(itr));
         for (Integer i : unmodifiableSet){
             bh.consume(i);
+        }
+        for(int i = 0; i < size; i++){
+            bh.consume(unmodifiableSet.contains(i));
         }
     }
 
