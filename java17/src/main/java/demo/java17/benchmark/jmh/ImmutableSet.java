@@ -1,6 +1,6 @@
 package demo.java17.benchmark.jmh;
 
-import com.google.common.collect.Iterables;
+import org.apache.commons.collections4.set.UnmodifiableSet;
 import org.jetbrains.annotations.NotNull;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
@@ -20,22 +20,35 @@ import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Objects;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.StreamSupport;
+
+import static com.google.common.collect.ImmutableSet.copyOf;
 
 @State(Scope.Benchmark)
-@Warmup(iterations = 2, time = 1)
-@Measurement(iterations = 2, time = 1)
+@Warmup(iterations = 5, time = 1)
+@Measurement(iterations = 5, time = 1)
 @BenchmarkMode(Mode.AverageTime)
 @Fork(2)
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
-public class IterableUtils {
+public class ImmutableSet {
 
-    @Param({"1", "100", "10000", "1000000"})
+    @Param({"1", "100", "10000", "1000000", "100000000"})
     private int size;
 
     private Iterable<Integer> itr;
+
+    @NotNull
+    public static <T> Set<T> toLinkedSet(@NotNull  final Iterable<? extends T> iterable) {
+        Objects.requireNonNull(iterable);
+        final Set<T> result = new LinkedHashSet<>();
+        iterable.forEach(result::add);
+        return result;
+    }
 
     @Setup
     public void setup() {
@@ -62,24 +75,32 @@ public class IterableUtils {
 
     @Benchmark
     public void guava(Blackhole bh) {
-       bh.consume(Iterables.getFirst(itr, bh));
+        com.google.common.collect.ImmutableSet<Integer> immutableSet = copyOf(itr);
+        for (Integer i : immutableSet) {
+            bh.consume(i);
+        }
     }
 
     @Benchmark
     public void apache(Blackhole bh) {
-        bh.consume(org.apache.commons.collections4.IterableUtils.first(itr));
+        Set<Integer> unmodifiableSet = UnmodifiableSet.unmodifiableSet(toLinkedSet(itr));
+        for (Integer i : unmodifiableSet){
+            bh.consume(i);
+        }
     }
 
     @Benchmark
-    public void stream(Blackhole bh) {
-        bh.consume(StreamSupport.stream(itr.spliterator(), false).findFirst().orElse(0));
+    public void jdk(Blackhole bh) {
+        Set<Integer> unmodifiableSet = Collections.unmodifiableSet(toLinkedSet(itr));
+        for (Integer i : unmodifiableSet){
+            bh.consume(i);
+        }
     }
 
     public static void main(String[] args) throws RunnerException, IOException {
         Options opt = new OptionsBuilder()
-                .include(IterableUtils.class.getSimpleName() + ".*")
+                .include(ImmutableSet.class.getSimpleName() + ".*")
                 .build();
         new Runner(opt).run();
     }
-
 }

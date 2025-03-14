@@ -1,6 +1,5 @@
 package demo.java17.benchmark.jmh;
 
-import org.openjdk.jmh.Main;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;
@@ -13,7 +12,10 @@ import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Warmup;
 import org.openjdk.jmh.infra.Blackhole;
+import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
+import org.openjdk.jmh.runner.options.Options;
+import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -96,6 +98,9 @@ public class StringIntern {
     }
 
     public static void main(String[] args) throws IOException, RunnerException {
-        Main.main(args);
+        Options opt = new OptionsBuilder()
+                .include(StringIntern.class.getSimpleName() + ".*")
+                .build();
+        new Runner(opt).run();
     }
 }
