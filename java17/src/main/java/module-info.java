@@ -12,6 +12,7 @@ module java17 {
     requires jmh.generator.annprocess;
     requires org.jetbrains.annotations;
     requires org.apache.commons.collections4;
+    requires org.apache.commons.codec;
 
     uses demo.java8.com.proto.model.AddressBookProtos;
     uses AddressBookProtos.Person;
